@@ -1,16 +1,16 @@
 'use client'
 
 import { useEffect, useState } from "react";
-//import  WebApp from "@twa-dev/sdk";
-import { WebApp } from "@twa-dev/types";
+import  WebApp from "@twa-dev/sdk";
+//import { WebApp } from "@twa-dev/types";
 
-declare global {
+/*declare global {
   interface Window {
     Telegram?: {
       WebApp: WebApp
     }
   }
-}
+}*/
 
 interface UserData {
   id: number;
@@ -24,14 +24,14 @@ interface UserData {
 export default function Home () {
   const [userData, setUserData] = useState< UserData | null > (null);
 
-  /*useEffect(() => {
+ useEffect(() => {
     if(WebApp.initDataUnsafe.user) {
        setUserData(WebApp.initDataUnsafe.user as UserData);
     }
   }, [])
-*/
 
-useEffect(() => {
+
+/*useEffect(() => {
   if(typeof window !== undefined && window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
       tg.ready();
@@ -43,7 +43,7 @@ useEffect(() => {
     alert('Is not telegram')
   }
 
-})
+})*/
 
   return (
     <main className="p-4">
